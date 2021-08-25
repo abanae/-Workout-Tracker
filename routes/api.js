@@ -3,7 +3,7 @@ const { Workout } = require('../models');
 
 
 // Getting Workouts
-router.get('/api/workouts/', async (req, res) => {
+router.get('/api/workouts', async (req, res) => {
     try {
         const allWorkouts = await Workout.find();
         res.json(allWorkouts);
@@ -30,6 +30,16 @@ router.post("/api/workouts", async (req, res) => {
     try {
         const createWorkout = await Workout.create();
         res.json(createWorkout);
+    } catch (e) {
+        res.json(e);
+    }
+});
+
+// Getting workouts in range
+router.get("/api/workouts/range", async (req, res) => {
+    try {
+        const rangeWorkout = await Workout.find();
+        res.json(rangeWorkout);
     } catch (e) {
         res.json(e);
     }

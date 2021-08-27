@@ -5,7 +5,13 @@ const { Workout } = require('../models');
 // Getting Workouts
 router.get('/api/workouts', async (req, res) => {
     try {
-        const allWorkouts = await Workout.find();
+        const allWorkouts = await Workout.aggregate([
+            {$addFields: {
+                totalDuration: {
+                    $sum:"$exercises.duration"
+                }
+            }}
+        ]);
         res.json(allWorkouts);
     } catch (e) {
         res.json(e);
@@ -38,7 +44,13 @@ router.post("/api/workouts", async (req, res) => {
 // Getting workouts in range
 router.get("/api/workouts/range", async (req, res) => {
     try {
-        const rangeWorkout = await Workout.find();
+        const allWorkouts = await Workout.aggregate([
+            {$addFields: {
+                totalDuration: {
+                    $sum:"$exercises.duration"
+                }
+            }}
+        ]);
         res.json(rangeWorkout);
     } catch (e) {
         res.json(e);

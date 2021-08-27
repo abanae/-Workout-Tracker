@@ -51,7 +51,7 @@ router.get("/api/workouts/range", async (req, res) => {
                 }
             }}
         ]);
-        res.json(rangeWorkout);
+        res.json(allWorkouts);
     } catch (e) {
         res.json(e);
     }

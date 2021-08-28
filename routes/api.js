@@ -51,8 +51,9 @@ router.get("/api/workouts/range", async (req, res) => {
                     $sum:"$exercises.duration"
                 }
             }}
-        ]).sort({ date: -1 }).limit(7);
+        ]).sort({ _id: -1 }).limit(7).sort({ _id: 1 });
         res.json(allWorkouts);
+        console.log(allWorkouts);
     } catch (e) {
         res.json(e);
     }

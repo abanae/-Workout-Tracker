@@ -19,9 +19,9 @@ const API = {
       body: JSON.stringify(data)
     });
 
-    const json = await res.json();
+    const test = await res.json();
 
-    return json;
+    return test;
   },
   async createWorkout(data = {}) {
     const res = await fetch("/api/workouts", {

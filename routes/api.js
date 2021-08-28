@@ -25,6 +25,7 @@ router.put('/api/workouts/:id', async (req, res) => {
             { $push: { exercises: body } },
             { new: true }
         )
+        console.log(addWorkout);
         res.json(addWorkout);
     } catch (e) {
         res.json(e);

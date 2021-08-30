@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 mongoose.set('debug', true);
-mongoose.connect('mongodb://localhost:27017/workout', {
+mongoose.connect('mongodb://localhost:27017/workoutDB', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,

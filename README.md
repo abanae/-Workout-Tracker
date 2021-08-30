@@ -37,7 +37,9 @@ Cloud Application Platform:
 
 
 ## Final Results:
+![Responsive Viewport](https://media1.giphy.com/media/gW2HBDjY5YF60FKArG/giphy.gif?cid=790b76115ed4a5ecb1978ef3ac779adf8aee6900285c40ce&rid=giphy.gif&ct=g)
 - [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://gentle-springs-68577.herokuapp.com/)
+
 
 
 ## Testing:
